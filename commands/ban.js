@@ -71,7 +71,7 @@ exports.run = async(client, msg, args) => {
     .setTitle('Ban ⚒️')
     .setColor('#8b0000')
     .setDescription(`${user} has been banned for the following: **${reason}**`)
-    msg.channel.send(`**${user}** has been banned by );
+    msg.channel.send(banembed);
 
 }
 
