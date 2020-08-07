@@ -3,12 +3,20 @@ var Discord = require('discord.js');
 var ms = require('ms');
 
 exports.run = async(client, msg, args) => {
-
-    if(!msg.member.hasPermission('MANAGE_MESSAGES')) return msg.reply('You can\'t use that!');
+    
+    const mutemp = new Discord.MessageEmbed()
+    .setTitle('Warning ⚠️')
+    .setColor("RED")
+    .setDescription('You lack permission to mute.')
+    if(!msg.member.hasPermission('MANAGE_MESSAGES')) return msg.channel.send(mutemp);
 
     var user = msg.mentions.users.first();
-
-    if(!user) return msg.reply('You didn\'t mention anyone!');
+    
+    const muteerror = new Discord.MessageEmbed()
+    .setTitle('Warning ⚠️')
+    .setDescription("Please mention the user that you'd like to mute.")
+    .setColor('#FF0000')
+    if(!user) return msg.channel.send(muteerror);
 
     var member;
 
@@ -23,18 +31,22 @@ exports.run = async(client, msg, args) => {
     }
 
     if(!member) return msg.reply('They aren\'t in the server!');
-
-    if(member.hasPermission('MANAGE_MESSAGES')) return msg.reply('You cannot mute that person!');
+    
+    const ucmt = new Discord.MessageEmbed()
+    .setTitle('Warning ⚠️')
+    .setDescription('You cannot mute another Staff member.')
+    .setColor('#FF0000')
+    if(member.hasPermission('MANAGE_MESSAGES')) return msg.channel.send(ucmt);
 
     var rawTime = args[1];
 
     var time = ms(rawTime);
 
-    if(!time) return msg.reply('You didn\'t specify a time!');
+    if(!time) return msg.channel.send("Please specify a time.");
 
     var reason = args.splice(2).join(' ');
 
-    if(!reason) return msg.reply('You need to give a reason!');
+    if(!reason) return msg.channrl.send('You need to give a reason!');
 
     var channel = msg.guild.channels.cache.find(c => c.name === 'potato');
 
