@@ -94,7 +94,7 @@ exports.run = async(client, msg, args) => {
     const muteembed = new Discord.MessageEmbed()
     .setTitle('Mute ⚒️')
     .setColor('#8b0000')
-    .setDescription(`${user} has been muted for **${rawTime}** for the following: **${reason}**`)
+    .setDescription(muteembed);
 
     msg.channel.send(muteembed);
 
