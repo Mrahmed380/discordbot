@@ -6,12 +6,9 @@ exports.run = async(client, msg, args) => {
 
     var user = msg.mentions.users.first();
     
-    const banpmau = new Discord.MessageEmbed()
-    .setTitle("Error ✋")
-    .setDescription("Please mention the user that you'd like to ban.")
-    .setColor("ORANGE")
-    
-    if(!user) return msg.channel.send(banpmau);
+
+
+    if(!user) return msg.channel.send("Please mention the user that you'd like to mute.");
 
     var member;
 
