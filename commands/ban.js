@@ -10,7 +10,8 @@ exports.run = async(client, msg, args) => {
     .setTitle("Error ✋")
     .setDescription("Please mention the user that you'd like to ban.")
     .setColor("ORANGE")
-    if(!user) return msg.channel.send("Please mention the user that you'd like to mute.");
+    
+    if(!user) return msg.channel.send(banpmau);
 
     var member;
 
