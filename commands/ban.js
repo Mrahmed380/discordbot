@@ -8,7 +8,7 @@ exports.run = async(client, msg, args) => {
     
 
 
-    if(!user) return msg.channel.send("Please mention the user that you'd like to mute.");
+    if(!user) return msg.channel.send("Please mention the user that you'd like to ban.");
 
     var member;
 
