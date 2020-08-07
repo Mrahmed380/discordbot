@@ -91,7 +91,11 @@ exports.run = async(client, msg, args) => {
         member.roles.remove(role);
 
     }, time);
+    const muteembed = new Discord.MessageEmbed()
+    .setTitle('Mute ⚒️')
+    .setColor('#8b0000')
+    .setDescription(`${user} has been muted for **${rawTime}** for the following: **${reason}**`)
 
-    msg.channel.send(`**${user}** has been muted by **${msg.author}** for **${rawTime}**!`);
+    msg.channel.send(muteembed);
 
 }
