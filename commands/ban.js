@@ -2,11 +2,15 @@ var Discord = require('discord.js');
 
 exports.run = async(client, msg, args) => {
 
-    if(!msg.member.hasPermission('BAN_MEMBERS')) return msg.reply('You can\'t use that!');
+    if(!msg.member.hasPermission('BAN_MEMBERS')) return msg.channel.send("Only **Admins** or higher ranked Staff members can ban.");
 
     var user = msg.mentions.users.first();
-
-    if(!user) return msg.reply('You didn\'t mention anyone!');
+    
+    const banpmau = new Discord.MessageEmbed()
+    .setTitle("Error ✋")
+    .setDescription("Please mention the user that you'd like to ban.")
+    .setColor("ORANGE")
+    if(!user) return msg.channel.send("Please mention the user that you'd like to mute.");
 
     var member;
 
@@ -22,19 +26,20 @@ exports.run = async(client, msg, args) => {
 
     if(member){
 
-        if(member.hasPermission('MANAGE_MESSAGES')) return msg.reply('You cannot ban this person!');
+        if(member.hasPermission('MANAGE_MESSAGES')) return msg.channel.send('You cannot ban another **Staff** member.');
 
     }
 
     var reason = args.splice(1).join(' ');
 
-    if(!reason) return msg.reply('You need to give a reason!');
+    if(!reason) return msg.channel.send('Please specify a **reason** to ban.');
 
-    var channel = msg.guild.channels.cache.find(c => c.name === 'potato');
+    var channel = msg.guild.channels.cache.find(c => c.name === 'mod-logs');
 
     var log = new Discord.MessageEmbed()
 
-    .setTitle('User Banned')
+    .setTitle('Ban')
+    .setDescription('A user has been banned.')
 
     .addField('User:', user, true)
 
@@ -48,7 +53,7 @@ exports.run = async(client, msg, args) => {
 
     .setTitle('You were banned!')
 
-    .setDescription(reason);
+    .setDescription(`You were banned in Desire for the following: ${reason}`);
 
     try {
 
@@ -61,8 +66,12 @@ exports.run = async(client, msg, args) => {
     }
 
     msg.guild.members.ban(user); // This should not be user.id like I said in my video. I made a mistake. Sorry! :)
-
-    msg.channel.send(`**${user}** has been banned by **${msg.author}**!`);
+    
+    const banembed = new Discord.MessageEmbed()
+    .setTitle('Ban ⚒️')
+    .setColor('#8b0000')
+    .setDescription(`${user} has been banned for the following: **${reason}**`)
+    msg.channel.send(`**${user}** has been banned by );
 
 }
 
