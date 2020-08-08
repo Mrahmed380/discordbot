@@ -1,3 +1,4 @@
+const Discord = require('discord.js')
 exports.run = async(client, msg, args) {
   const helpembed = new Discord.MessageEmbed()
   .setAuthor("DesireBot Help", message.author.avatarURL)
