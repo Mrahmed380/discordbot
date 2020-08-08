@@ -54,7 +54,7 @@ client.on('guildMemberAdd', member => {
 
 .addField('\u200B', '\u200B')
 
- .setFooter(`Member #{member.guild.memberCount}`)
+ .setFooter(`Member #${member.guild.memberCount}`)
  channel.send(welcome);
  
 
