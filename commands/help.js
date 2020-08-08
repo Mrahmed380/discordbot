@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-exports.run = async(client, msg, args) {
+exports.run = async(client, msg, args) => {
   const helpembed = new Discord.MessageEmbed()
   .setAuthor("DesireBot Help", message.author.avatarURL)
   .setDescription("Some commands will be shown here. Some will not.")
