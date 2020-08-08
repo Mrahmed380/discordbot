@@ -44,8 +44,8 @@ exports.run = async(client, msg, args) => {
     var embed = new Discord.MessageEmbed()
 
     .setTitle('You were warned!')
-
-    .setDescription(reason);
+    .setColor("#FFFF00")
+    .setDescription(`Reason: ${reason}`);
 
     try {
 
@@ -58,6 +58,7 @@ exports.run = async(client, msg, args) => {
     }
     const warnembed = new Discord.MessageEmbed()
     .setTitle('Warn ⚒️')
+    .setColor('#8b0000')
     .setDescription(`${user} has been warned for the following: **${reason}**`)
     msg.channel.send(warnembed);
 
