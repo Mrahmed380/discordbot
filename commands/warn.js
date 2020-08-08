@@ -56,7 +56,9 @@ exports.run = async(client, msg, args) => {
         console.warn(err);
 
     }
-
-    msg.channel.send(`**${user}** has been warned by **${msg.author}**!`);
+    const warnembed = new Discord.MessageEmbed()
+    .setTitle('Warn ⚒️')
+    .setDescription(`${user} has been warned for the following: **${reason}`)
+    msg.channel.send(warnembed);
 
 }
