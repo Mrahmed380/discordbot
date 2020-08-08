@@ -6,7 +6,7 @@ exports.run = async(client, msg, args) => {
   .addField("⚒️ Moderation ⚒️", "**.ban**\n**.kick**\n**.mute**\n**.warn**")
   .addField("🎱 Fun 🎱",  "**.8ball**\n**.future**\n**.flip**")
   .addField("💫 Other 💫", "**.userinfo / .whois**\\n**.botinfo**")
-  msg.channel.sebd(helpembed);
+  msg.channel.send(helpembed);
  }
 
 
