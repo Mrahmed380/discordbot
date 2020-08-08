@@ -3,7 +3,7 @@ exports.run = async(client, msg, args) => {
   const helpembed = new Discord.MessageEmbed()
   .setTitle('Help Menu.')
   .setDescription("Some commands will be shown here. Some will not.")
-  .setColor("PINK")
+  .setColor("RANDOM")
   .addField("Moderation ⚒️", "`.ban .kick .mute .warn`")
   .addField("Fun 🎱",  "`.8ball .future .flip`")
   .addField("Other 💫", "`.userinfo / .whois .botinfo`")
