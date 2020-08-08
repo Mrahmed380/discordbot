@@ -48,7 +48,7 @@ client.on('guildMemberAdd', member => {
 
   .setAuthor(member.user.tag, member.user.displayAvatarURL())
 
-  .setColor("GREEN")
+  .setColor("#00ff00")
 
   .setDescription(`Hey **${member.user.username}**, welcome to **Desire**!')
 
