@@ -12,5 +12,22 @@
   "dependencies": {
     "discord.js": "^12.2.0",
     "ms": "^2.1.2"
-  }
+  },
+
+
+  "name": "quick.db",
+
+  "version": "7.1.1",
+
+  "description": "An easy, non-locking, persistent better-sqlite3 wrapper designed to be easy to setup & utilize",
+
+  "main": "index.js",
+
+  "dependencies": {
+
+    "better-sqlite3": "^6.0.1",
+
+    "lodash": "4.17.15"
+
+  },
 }
