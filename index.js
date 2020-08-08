@@ -50,7 +50,7 @@ client.on('guildMemberAdd', member => {
 
   .setColor("#00ff00")
 
-  .setDescription(`Hey **${member.user.username}**, welcome to **Desire**!')
+  .setDescription(`Hey **${member.user.username}**, welcome to **Desire**!`)
 
 .addField('\u200B', '\u200B')
 
