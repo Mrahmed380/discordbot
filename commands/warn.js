@@ -3,7 +3,7 @@ var Discord = require('discord.js');
 exports.run = async(client, msg, args) => {
 
 
-    if(!msg.member.hasPermission('MANAGE_MESSAGES')) return msg.channel.send("Only **Trial Moderators* or higher ranked Staff members can warn.');
+    if(!msg.member.hasPermission('MANAGE_MESSAGES')) return msg.channel.send("Only **Trial Moderators* or higher ranked Staff members can warn.");
 
     var user = msg.mentions.users.first();
 
