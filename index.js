@@ -46,7 +46,7 @@ client.on('guildMemberAdd', member => {
 
  var welcome = new Discord.MessageEmbed()
 
-  .setAuthor(member.user.tag, member.user.displayAvatarURL())
+  .setAuthor(`${member.user.tag}`, member.user.displayAvatarURL())
 
   .setColor("#00ff00")
 
