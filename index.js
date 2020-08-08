@@ -58,6 +58,6 @@ client.on('guildMemberAdd', member => {
  channel.send(welcome);
  
 
-}
+})
 
 client.login(config.token);
